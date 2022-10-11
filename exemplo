@@ -1,0 +1,88 @@
+multipass launch docker --cpus 2 --disk 40G --mem 4G --network name=pablito,mode=manual
+sudo netplan apply
+multipass launch -n 22.04 --name primary -c 2 -m 2G -d 40G --network name=pablitonet,mode=manual
+https://devpress.csdn.net/linux/62f6444ac6770329307fc4fe.html
+
+sudo nano /etc/netplan/50-cloud-init.yaml
+
+            gateway4: 192.168.137.1
+            nameservers:
+                addresses: [8.8.8.8, 1.1.1.1]
+    version: 2
+
+
+https://medium.com/analytics-vidhya/easy-way-setup-elk-on-docker-10938f3fcf96#:~:text=Easy%20way%20to%20setup%20ELK%20on%20Docker%201,a%20new%20YAML%20file%20docker-compose.yml%20...%20Mais%20itens
+
+
+$apr1$g/dB4sJS$IbhjfAiKE9PDNl17VFe9T1
+
+sudo ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/localhost
+
+sudo mkdir -p /var/www/localhost/html
+sudo chown -R $USER:$USER /var/www/localhost/html
+sudo chmod -R 755 /var/www/localhost
+sudo chmod -R 755 /var/www/localhost
+sudo nano /var/www/localhost/html/index.html
+sudo nano /etc/nginx/sites-available/localhost
+
+
+Stop the vm:
+
+$ multipass stop NAME
+Set the resources:
+
+$ multipass set local.NAME.cpus=2
+$ multipass set local.NAME.memory=6G
+Start the vm:
+
+$ multipass start NAME
+
+multipass launch docker --name docker --cpus 2 --disk 60G --mem 6G 
+multipass launch 22.04 --name primary --cpus 2 --disk 60G --mem 4G --network name=Default Switch,mode=manual
+sudo apt-get install openjdk-11-jdk wget apt-transport-https curl -y
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+
+sudo apt-get install apt-transport-https
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
+sudo apt-get update && sudo apt-get install elasticsearch
+ys=dQpaakp*9bOKm1dxd
+
+multipass exec elk -- ip -br address show scope global
+
+
+multipass launch docker --cpus 2 --disk 60G --mem 6G
+
+http://wiki.foz.ifpr.edu.br/wiki/index.php/Multipass:_Gerenciador_de_Maquinas_Virtuais_Ubuntu
+https://www.madalin.me/devops/2022/250/multipass-permanent-ip-private-network-hyperv-windows.html
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            match:
+                macaddress: 52:54:00:e0:93:a0
+            set-name: eth0
+        eth1:
+            addresses: [192.168.254.2/24]
+            gateway4: 192.168.254.1
+            nameservers:
+                addresses: [8.8.8.8, 8.8.4.4]
+
+
+                docker volume create --driver local \
+     --opt type=none \
+     --opt device=datastore/elasticsearch \
+     --opt o=bind elasticsearch
+
+     docker volume create --driver local \
+     --opt type=none \
+     --opt device=datastore/setup \
+     --opt o=bind setup
+
+
+     multipass set local.passphrase
+multipass authenticate
+
+
+multipass launch docker --cpus 2 --disk 60G --mem 4G --network pontewifi --network name=pablitonet,mode=manual
+
+
