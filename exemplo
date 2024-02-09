@@ -1,8 +1,6 @@
 multipass launch docker --cpus 2 --disk 40G --mem 4G --network name=pablito,mode=manual
 sudo netplan apply
 multipass launch -n 22.04 --name primary -c 2 -m 2G -d 40G --network name=pablitonet,mode=manual
-https://devpress.csdn.net/linux/62f6444ac6770329307fc4fe.html
-
 
 multipass launch -n core22 --name qas -c 2 -m 1G -d 10G --network Wi-Fi
 
